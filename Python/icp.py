@@ -103,7 +103,7 @@ def iterative_closest_point(A, B, max_iterations=20, tolerance=0.001):
         # update the current source
         src = np.dot(T, src)
 
-        # check error
+        # check error (stop if error is less than specified tolerance)
         mean_error = np.mean(distances)
         if np.abs(prev_error - mean_error) < tolerance:
             break
@@ -111,7 +111,11 @@ def iterative_closest_point(A, B, max_iterations=20, tolerance=0.001):
 
     # calculate final transformation, error, and mapped source points
     T = best_fit_transform(A, src[:m,:].T)
-    final_error = np.sum(distances) 
-    finalA = np.dot(T, src)
+    final_error = prev_error
+    
+    # get final A 
+    rot = T[0:-1,0:-1]
+    t = T[:-1,-1]
+    finalA = np.dot(rot, A.T).T + t
 
     return T, finalA, final_error, i
