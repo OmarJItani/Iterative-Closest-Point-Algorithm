@@ -1,3 +1,0 @@
-## Iterative Closest Point Algorithm
-
-
