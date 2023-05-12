@@ -1,10 +1,19 @@
 # Iterative Closest Point Algorithm
 
-
+## What is in this repository?
 In this repository, I present my implementation to the Iterative Closest Point (ICP) algorithm in both Python and Wolfram Mathematica. Soon, I'll be adding my implementation of ICP in C++.
 
-Below is the explanation of each of the functions developed to implement the iterative closest point algorithm.
 
+## Example:
+In this example, I utilize the developed ICP algorithm to align two sinusoidal point clouds that are originally identical, i.e., of identical shapes, but have been subjected to a homogeneous transformation.
+
+The animation presented below visually demonstrates how the ICP algorithm progressively brings the two point clouds into alignment, achieving a high degree of overlap between them.
+
+<img src="README_Files/ICP_animation.gif" alt="ICP Animation" width="700"/>
+
+
+## Code Details
+Here is the step by step explanation of each of the functions developed to implement the iterative closest point algorithm.
 
 ### best_fit_transformation
 
